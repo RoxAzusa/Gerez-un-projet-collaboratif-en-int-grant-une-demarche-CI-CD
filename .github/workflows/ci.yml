@@ -30,7 +30,7 @@ jobs:
       run: npm run test -- --watch=false --code-coverage --no-watch --browsers=ChromeHeadless
 
     - name: Upload frontend coverage report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: frontend-coverage
         path: front/coverage/
@@ -60,7 +60,7 @@ jobs:
       run: mvn clean verify -X
 
     - name: Upload backend JaCoCo coverage report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: backend-coverage
         path: back/target/site/jacoco/
