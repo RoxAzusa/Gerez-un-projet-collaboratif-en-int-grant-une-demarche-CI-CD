@@ -25,6 +25,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           file: ./front/Dockerfile
+          context: ./front
           push: true
           tags: user/app:latest
 
@@ -49,5 +50,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           file: ./back/Dockerfile
+          context: ./back
           push: true
           tags: user/app:latest
