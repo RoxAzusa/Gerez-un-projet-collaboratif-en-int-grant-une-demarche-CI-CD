@@ -23,6 +23,7 @@ jobs:
           context: ./front
           file: ./front/Dockerfile
           push: true
+          buildkitd-flags: --debug
           tags: user/app:latest
 
   docker-back:
@@ -44,4 +45,5 @@ jobs:
           context: ./back
           file: ./back/Dockerfile
           push: true
+          buildkitd-flags: --debug
           tags: user/app:latest
