@@ -27,7 +27,7 @@ jobs:
           file: ./front/Dockerfile
           push: true
           buildkitd-flags: --debug
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/app:latest
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/front-app:latest
 
   docker-back:
     name: docker-back
@@ -52,4 +52,4 @@ jobs:
           file: ./back/Dockerfile
           push: true
           buildkitd-flags: --debug
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/app:latest
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/back-app:latest
