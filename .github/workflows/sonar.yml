@@ -61,7 +61,7 @@ jobs:
         run: npm ci
 
       - name: Run Angular tests
-        run: npm run test -- --watch=false --no-progress --browsers=ChromeHeadless
+        run: npm run test -- --watch=false --code-coverage --no-progress --browsers=ChromeHeadless
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
