@@ -67,7 +67,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: front/coverage/bobapp
+          path: ./coverage/bobapp
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
