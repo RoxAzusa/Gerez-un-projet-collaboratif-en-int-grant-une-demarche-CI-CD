@@ -34,3 +34,32 @@ jobs:
         with:
           name: frontend-coverage
           path: front/coverage/
+
+  backend:
+    name: Run Backend Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: back
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Install Maven
+        run: sudo apt-get install -y maven
+
+      - name: Run tests with JaCoCo
+        run: mvn clean verify -X
+
+      - name: Upload backend JaCoCo coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-coverage
+          path: back/target/site/jacoco/
